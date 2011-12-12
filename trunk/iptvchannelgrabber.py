@@ -28,7 +28,7 @@ startv = 0
 universetv = 0
 
 v = "ghm"
-
+s = 0
 q = 1
 demo = 0
 
@@ -44,7 +44,7 @@ def evaluatecondition(expression):
     stmnt = stmnt.replace('!', ' not ')
     stmnt = stmnt.replace('h.', ' ')
 
-    stmnt = stmnt.replace('"wba"', '1')
+    #stmnt = stmnt.replace('"wba"', '1')
     stmnt = stmnt.replace('$.hd', 'hdmediabox')
 
     hello_mod = types.ModuleType("testmodule")
@@ -53,7 +53,7 @@ def evaluatecondition(expression):
     #print (stmnt)
     codeObject = compile(stmnt, '<Summink>', 'exec')
     #tel = {'vodafone':0,'arabisch':0,'universetv':0, 'u':0, 'q':1, 'startv': 0, 'y': False, 'p': 1, 'wba': 0, 'hd': 0, 'hdmediabox': 0, 'demo': 0, 'ecv': 0, 'plus': 0, 'talen': 0, 'geenerotiek': 0}
-    tel = {'vodafone':0,'arabtv':0,'universetv':universetv, 'u':s, 'q':q, 'startv': startv, 'y': False, 'p': 1, 'v': v, 'hd': hdpakket, 'hdmediabox': hdmediabox, 'demo': demo, 'ecv': eredivisiepakket, 'plus': pluspakket, 'talen': talenpakket, 'geenerotiek': geenerotiek}
+    tel = {'enschede':0,'rijssen':0,'almere':0,'vodafone':0,'arabtv':0,'universetv':universetv, 'u':s, 'q':q, 'startv': startv, 'y': False, 'wba': 0, 'r': 1, 'v': v, 'hd': hdpakket, 'hdmediabox': hdmediabox, 'demo': demo, 'ecv': eredivisiepakket, 'plus': pluspakket, 'talen': talenpakket, 'geenerotiek': geenerotiek}
 
     hello_mod.say_hell = types.FunctionType(codeObject, tel)
     hello_mod.say_hell()
@@ -118,6 +118,7 @@ def main():
     allrows = getrow.finditer(blah)
 
     for item in allrows:
+        print (item.group(3))
         if (evaluatecondition(item.group(3))):
 
             channelnumber = item.group(4)
@@ -138,7 +139,6 @@ def main():
             isRadio = 0
 
             print ('channel: %s,%s' % (item.group(4), channelascii))
-
             #                     1         2             3    4    
             getsubrow = re.compile('for\([IJKL]\.tv_(.*?)\.a\.push')
             allsubrows = getsubrow.finditer(item.group(11))
