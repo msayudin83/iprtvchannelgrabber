@@ -1,4 +1,3 @@
-#
 # Modules we need
 import subprocess
 import types
@@ -28,10 +27,7 @@ geenerotiek = 0
 startv = 0
 universetv = 0
 
-wba = 0
-#wba=1
-#s = "wba"
-s = 0
+v = "ghm"
 
 q = 1
 demo = 0
@@ -42,6 +38,7 @@ def evaluatecondition(expression):
     stmnt = stmnt.replace('{', '')
     stmnt = stmnt.replace('i.', '')
     stmnt = stmnt.replace('l.', '')
+    stmnt = stmnt.replace('j.', '')
     stmnt = stmnt.replace('&&', ' and ')
     stmnt = stmnt.replace('||', ' or ')
     stmnt = stmnt.replace('!', ' not ')
@@ -56,7 +53,7 @@ def evaluatecondition(expression):
     #print (stmnt)
     codeObject = compile(stmnt, '<Summink>', 'exec')
     #tel = {'vodafone':0,'arabisch':0,'universetv':0, 'u':0, 'q':1, 'startv': 0, 'y': False, 'p': 1, 'wba': 0, 'hd': 0, 'hdmediabox': 0, 'demo': 0, 'ecv': 0, 'plus': 0, 'talen': 0, 'geenerotiek': 0}
-    tel = {'vodafone':0,'arabtv':0,'universetv':universetv, 'u':s, 'q':q, 'startv': startv, 'y': False, 'p': 1, 'wba': wba, 'hd': hdpakket, 'hdmediabox': hdmediabox, 'demo': demo, 'ecv': eredivisiepakket, 'plus': pluspakket, 'talen': talenpakket, 'geenerotiek': geenerotiek}
+    tel = {'vodafone':0,'arabtv':0,'universetv':universetv, 'u':s, 'q':q, 'startv': startv, 'y': False, 'p': 1, 'v': v, 'hd': hdpakket, 'hdmediabox': hdmediabox, 'demo': demo, 'ecv': eredivisiepakket, 'plus': pluspakket, 'talen': talenpakket, 'geenerotiek': geenerotiek}
 
     hello_mod.say_hell = types.FunctionType(codeObject, tel)
     hello_mod.say_hell()
@@ -108,7 +105,7 @@ def main():
     count = 0 
     
     #                       1                    2         3       4            5      6        7            8        9       10    11
-    getrow = re.compile('(c\.push\("[ A-z0-9-]*)("\);)(if\(.*?)\{b=([0-9]*);if(.*?),c:{".*?":"(%s)"},[kl]:{".*?":"(%s)"},[gf]:"(%s)",[ij]:"(%s)",n:"(%s)"(.*?)(\[c\.pop\(\))' % (nameregex, nameregex, nameregex, nameregex, nameregex))
+    getrow = re.compile('(c\.push\("[ A-z0-9-]*)("\);)(if\(.*?)\{b=([0-9]*);if(.*?),[bc]:{".*?":"(%s)"},[kl]:{".*?":"(%s)"},[gf]:"(%s)",[ij]:"(%s)",n:"(%s)"(.*?)(\[c\.pop\(\))' % (nameregex, nameregex, nameregex, nameregex, nameregex))
 
     allrows = getrow.finditer(blah)
 
@@ -143,21 +140,21 @@ def main():
             print ('channel: %s,%s' % (item.group(4), channelascii))
 
             #                     1         2             3    4    
-            getsubrow = re.compile('for\([IJK]\.tv_(.*?)\.a\.push')
+            getsubrow = re.compile('for\([IJKL]\.tv_(.*?)\.a\.push')
             allsubrows = getsubrow.finditer(item.group(11))
 
             for subitem in allsubrows:
                 isTV = 1
                 category = subitem.group(1)
 
-            getsubrow = re.compile('for\([IJK]\.radio_(.*?)\.a\.push')
+            getsubrow = re.compile('for\([IJKL]\.radio_(.*?)\.a\.push')
             allsubrows = getsubrow.finditer(item.group(11))
 
             for subitem in allsubrows:
                 isRadio = 1
                 category = subitem.group(1)
             #                     1         2             3    4        5              6
-            getrow = re.compile('(if\(.*?){(.*?)"igmp://(%s):([0-9]*)(;rtpskip=yes)?"(.*?)b\.push' % (ipregex))
+            getrow = re.compile('(if\(.*?){(.*?)"igmp://(%s):([0-9]*)(;rtpskip=yes)?"(.*?)\.push' % (ipregex))
             allsubrows = getrow.finditer(item.group(11))
 	    
             for subitem in allsubrows:
@@ -187,9 +184,10 @@ def main():
     
     print ("result tvchannels=%d" % len(tvchannels))
     print ("result radiochannels=%d" % len(radiochannels))
-    
+
+    #c.push("ned1");b=1;if(e)F[a].h=b;else{e=1;f=b}F[b]={g:b,b:{"default":"Nederland 1"},k:{"default":"Nederland 1"},f:"ned1",i:"ned1",n:"ned1.png",o:"ned1.png",m:"ned1.png",j:a,c:[]};
     #                    1                          2    3       4               5     6               7     8       9    10        11    12   13   14
-    getrow = re.compile('(c\.push\("[ A-z0-9-]*)"\)(;b=)([0-9]*)(.*?),c:{".*?":"(%s)"}(,[kl]:){".*?":"(%s)"}(,[gf]:)"(%s)"(,[ij]:)"(%s)"(,n:)"(%s)"(.*?)(\[c\.pop\(\))' % (nameregex, nameregex, nameregex, nameregex, nameregex), re.DOTALL)
+    getrow = re.compile('(c\.push\("[ A-z0-9-]*)"\)(;b=)([0-9]*)(.*?),[bc]:{".*?":"(%s)"}(,[kl]:){".*?":"(%s)"}(,[gf]:)"(%s)"(,[ij]:)"(%s)"(,n:)"(%s)"(.*?)(\[c\.pop\(\))' % (nameregex, nameregex, nameregex, nameregex, nameregex), re.DOTALL)
 
     allrows = getrow.finditer(blah)
 
@@ -217,14 +215,14 @@ def main():
         isTV = 0
         isRadio = 0
     
-        getsubrow = re.compile('for\([IJK]\.tv_(.*?)\.a\.push')
+        getsubrow = re.compile('for\([IJKL]\.tv_(.*?)\.a\.push')
         allsubrows = getsubrow.finditer(item.group(14))
 
         for subitem in allsubrows:
             isTV = 1
             category = subitem.group(1)
             
-        getsubrow = re.compile('for\([IJK]\.radio_(.*?)\.a\.push')
+        getsubrow = re.compile('for\([IJKL]\.radio_(.*?)\.a\.push')
         allsubrows = getsubrow.finditer(item.group(14))
 
         for subitem in allsubrows:
@@ -233,7 +231,7 @@ def main():
 
         print ('channel: %s,%s' % (item.group(3), channelascii))
 		#                     1         2             3    4    
-        getrow = re.compile('(if\(.*?){(.*?)"igmp://(%s):([0-9]*)(;rtpskip=yes)?"(.*?)b\.push' % (ipregex))
+        getrow = re.compile('(if\(.*?){(.*?)"igmp://(%s):([0-9]*)(;rtpskip=yes)?"(.*?)\.push' % (ipregex))
 
         allsubrows = getrow.finditer(item.group(14))
 
