@@ -342,7 +342,7 @@ def main():
 
     #c.push("ned1");b=1;if(e)F[a].h=b;else{e=1;f=b}F[b]={g:b,b:{"default":"Nederland 1"},k:{"default":"Nederland 1"},f:"ned1",i:"ned1",n:"ned1.png",o:"ned1.png",m:"ned1.png",j:a,c:[]};
     #                    1                          2       3       4               5     6               7     8       9    10        11    12   13   14
-     getrow = re.compile('([cde]\.push\("[ A-z0-9-]*)"\)(;b=)([0-9]*)(.*?),[bc]:{".*?":"(%s)"}(,[klm]:){".*?":"(%s)"}(,[gf]:)"(%s)"(,[ij]:)"(%s)"(,[np]:)"(%s)"(.*?)(\[[cde]\.pop\(\))' % (nameregex, nameregex, nameregex, nameregex, nameregex), re.DOTALL)
+    getrow = re.compile('([cde]\.push\("[ A-z0-9-]*)"\)(;b=)([0-9]*)(.*?),[bc]:{".*?":"(%s)"}(,[klm]:){".*?":"(%s)"}(,[gf]:)"(%s)"(,[ij]:)"(%s)"(,[np]:)"(%s)"(.*?)(\[[cde]\.pop\(\))' % (nameregex, nameregex, nameregex, nameregex, nameregex), re.DOTALL)
 
     allrows = getrow.finditer(blah)
 
