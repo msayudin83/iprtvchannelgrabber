@@ -29,6 +29,9 @@ startv = 0
 universetv = 0
 
 dordrecht = 1
+beltrum = 0
+eefde = 0
+epse = 0
 almen = 0
 barchem = 0
 enter = 0
@@ -61,12 +64,6 @@ hillegom = 0
 leiden = 0
 lieshout = 0
 achterveld = 0
-amersfoort = 0
-hoogland = 0
-hooglanderveen = 0
-leusden = 0
-stoutenburg = 0
-houten = 0
 steenenkamer = 0
 twello = 0
 wilp = 0
@@ -92,8 +89,6 @@ bussum = 0
 hilversum = 0
 naarden = 0
 hooglanderveen = 0
-hoogland = 0
-amersfoort = 0
 zeewolde = 0
 volkel = 0
 veghel = 0
@@ -167,7 +162,7 @@ def evaluatecondition(expression, hdbox):
     #print (stmnt)
     codeObject = compile(stmnt, '<Summink>', 'exec')
     #tel = {'vodafone':0,'arabisch':0,'universetv':0, 'u':0, 'q':1, 'startv': 0, 'y': False, 'p': 1, 'wba': 0, 'hd': 0, 'hdmediabox': 0, 'demo': 0, 'ecv': 0, 'plus': 0, 'talen': 0, 'geenerotiek': 0}
-    tel = {'i':1,'epse':0,'almen':0,'barchem':0,'eefde':0,'enter':0,'gorssel':0,'laren':0,'lochem':0,'notter':0,'wierden':0,'ruurlo':0,'almen':almen,'barchem':barchem,'enter':0,'gorssel':0,'laren':0,'lochem':0,'notter':0,'wierden':0,'ruurlo':0,'arnhem':0,'amersfoort':0,'hoogland':0,'hooglanderveen':0,'houten':0,'leusden':0,'maarssen':0,'maarssenbroek':0,'nieuwegein':0,'soest':0,'soesterberg':0,'stoutenburg':0,'utrecht':0,'veenendaal':0,'woudenberg':0,'rijssen':0,'aarlerixtel':0,'beekendonk':0,'haarlem':0,'hillegom':0,'leiden':0,'lieshout':0,'achterveld':0,'amersfoort':0,'hoogland':0,'hooglanderveen':0,'leusden':0,'stoutenburg':0,'houten':0,'steenenkamer':0,'twello':0,'wilp':0,'amsterdam':0,'hoevelaken':0,'nijkerk':0,'nijkerkerveen':0,'winterswijk':0,'elburg':0,'doornspijk':0,'haaksbergen':0,'goutum':0,'hempens':0,'leeuwarden':0,'enschede':0,'boekelo':0,'bleiswijk':0,'berkelenrodenrijs':0,'bergschenhoek':0,'alphenadrijn':alphenadrijn,'dordrecht':dordrecht,'utrecht':utrecht,'bussum':0,'hilversum':0,'naarden':0,'hooglanderveen':0,'hoogland':0,'amersfoort':0,'zeewolde':0,'volkel':0,'veghel':0,'uden':0,'son':0,'odiliapeel':0,'mierlo':0,'geldrop':0,'erp':0,'breugel':0,'sintoedenrode':0,'schijndel':0,'veldhoven':0,'best':0,'valkenswaard':0,'handel':0,'helmond':0,'lieshout':0,'mariahout':0,'milheeze':0,'nuenen':0,'aarlerixtel':0,'bakel':0,'beekendonk':0,'demortel':0,'eindhoven':0,'gemert':0,'meppel':0,'almere':0,'balgoij':0,'batenburg':0,'bergharen':0,'hernen':0,'ntrik':0,'nijmegen':0,'wijchen':0,'schalkhaar':0,'diepenveen':0,'deventer':0,'colmschate':0,'bathmen':0,'solcon':0,'vodafone':0,'arabtv':0,'universetv':universetv, 'v':v, 'w':v, 'q':1, 'startv': startv, 'y': False, 'wba': 0, 'j': 1, 'hd': hdpakket, 'hdmediabox': hdbox, 'demo': demo, 'ecv': eredivisiepakket, 'plus': pluspakket, 'talen': talenpakket, 'geenerotiek': geenerotiek}
+    tel = {'i':1,'beltrum':beltrum,'epse':epse,'eefde':eefde,'almen':almen,'barchem':barchem,'enter':enter,'gorssel':gorssel,'laren':laren,'lochem':lochem,'notter':notter,'wierden':wierden,'ruurlo':ruurlo,'arnhem':arnhem,'amersfoort':amersfoort,'hoogland':hoogland,'hooglanderveen':0,'houten':0,'leusden':0,'maarssen':0,'maarssenbroek':0,'nieuwegein':0,'soest':0,'soesterberg':0,'stoutenburg':0,'utrecht':0,'veenendaal':0,'woudenberg':0,'rijssen':0,'aarlerixtel':0,'beekendonk':0,'haarlem':0,'hillegom':0,'leiden':0,'lieshout':0,'achterveld':0,'hooglanderveen':0,'leusden':0,'stoutenburg':0,'houten':0,'steenenkamer':steenenkamer,'twello':twello,'wilp':wilp,'amsterdam':amsterdam,'hoevelaken':hoevelaken,'nijkerk':nijkerk,'nijkerkerveen':nijkerkerveen,'winterswijk':winterswijk,'elburg':elburg,'doornspijk':doornspijk,'haaksbergen':haaksbergen,'goutum':goutum,'hempens':hempens,'leeuwarden':leeuwarden,'enschede':enschede,'boekelo':boekelo,'bleiswijk':bleiswijk,'berkelenrodenrijs':berkelenrodenrijs,'bergschenhoek':bergschenhoek,'alphenadrijn':alphenadrijn,'dordrecht':dordrecht,'utrecht':utrecht,'bussum':bussum,'hilversum':0,'naarden':0,'hooglanderveen':0,'amersfoort':0,'zeewolde':0,'volkel':0,'veghel':0,'uden':0,'son':0,'odiliapeel':0,'mierlo':0,'geldrop':0,'erp':0,'breugel':0,'sintoedenrode':0,'schijndel':0,'veldhoven':0,'best':0,'valkenswaard':0,'handel':0,'helmond':0,'lieshout':0,'mariahout':0,'milheeze':0,'nuenen':0,'aarlerixtel':0,'bakel':0,'beekendonk':0,'demortel':0,'eindhoven':0,'gemert':0,'meppel':0,'almere':0,'balgoij':0,'batenburg':0,'bergharen':0,'hernen':0,'ntrik':0,'nijmegen':0,'wijchen':0,'schalkhaar':0,'diepenveen':0,'deventer':0,'colmschate':0,'bathmen':0,'solcon':0,'vodafone':0,'arabtv':0,'universetv':universetv, 'v':v, 'w':v, 'q':1, 'startv': startv, 'y': False, 'wba': 0, 'j': 1, 'hd': hdpakket, 'hdmediabox': hdbox, 'demo': demo, 'ecv': eredivisiepakket, 'plus': pluspakket, 'talen': talenpakket, 'geenerotiek': geenerotiek}
 
     hello_mod.say_hell = types.FunctionType(codeObject, tel)
     hello_mod.say_hell()
